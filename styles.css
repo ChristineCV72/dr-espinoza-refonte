@@ -428,6 +428,30 @@ section.tight {
   font-size: 1rem;
 }
 
+/* ---------- Quote ---------- */
+
+.quote {
+  margin: 40px 0 0;
+  padding-left: 28px;
+  border-left: 2px solid var(--bronze);
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+
+.quote span {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+}
+
 /* ---------- Specialites list ---------- */
 
 .spec-block {
