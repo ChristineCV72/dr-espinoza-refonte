@@ -106,7 +106,7 @@ nav.main-nav {
   gap: 26px;
 }
 
-nav.main-nav a {
+nav.main-nav > a {
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
@@ -116,8 +116,79 @@ nav.main-nav a {
   padding-bottom: 4px;
 }
 
-nav.main-nav a.active,
-nav.main-nav a:hover {
+/* ---------- Dropdown: Spécialités ---------- */
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding-bottom: 4px;
+}
+
+.nav-item > a.active,
+.nav-item > a:hover {
+  color: var(--sage-deep);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 44px rgba(28, 30, 29, 0.14);
+  padding: 30px;
+  gap: 36px;
+  z-index: 50;
+  min-width: 560px;
+}
+
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown {
+  display: flex;
+}
+
+.dropdown-col {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  min-width: 150px;
+}
+
+.dropdown-heading {
+  font-family: var(--display);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin: 0 0 6px;
+}
+
+.dropdown a {
+  font-family: var(--body);
+  font-size: 0.86rem;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--charcoal);
+}
+
+.dropdown a:hover {
+  color: var(--sage-deep);
+}
+
+nav.main-nav > a.active,
+nav.main-nav > a:hover {
   color: var(--sage-deep);
 }
 
@@ -734,6 +805,30 @@ footer .bottom-row {
   }
   .nav-toggle {
     display: flex;
+  }
+  .nav-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+  .dropdown {
+    display: flex;
+    position: static;
+    transform: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 0 18px;
+    gap: 20px;
+    min-width: 0;
+  }
+  .dropdown-col {
+    gap: 10px;
+  }
+  .dropdown a {
+    font-size: 0.8rem;
+    color: var(--text-muted);
   }
   footer.site-footer .foot-grid {
     grid-template-columns: 1fr;
