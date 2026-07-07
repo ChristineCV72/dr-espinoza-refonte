@@ -67,8 +67,13 @@ p {
   top: 0;
   z-index: 40;
   background: rgba(246, 242, 236, 0.92);
-  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 861px) {
+  .site-header {
+    backdrop-filter: blur(8px);
+  }
 }
 
 .site-header .wrap {
@@ -98,7 +103,7 @@ p {
 
 nav.main-nav {
   display: flex;
-  gap: 36px;
+  gap: 26px;
 }
 
 nav.main-nav a {
@@ -426,6 +431,62 @@ section.tight {
 .lang-row span {
   font-family: var(--display);
   font-size: 1rem;
+}
+
+/* ---------- Tarifs ---------- */
+
+.tarifs-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.tarifs-toc a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--sage-deep);
+}
+
+.tarifs-toc a:hover {
+  background: var(--charcoal);
+  color: var(--ivory);
+  border-color: var(--charcoal);
+}
+
+.price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.price-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.price-list .item {
+  font-size: 0.96rem;
+  color: var(--charcoal);
+}
+
+.price-list .price {
+  font-family: var(--display);
+  font-size: 1rem;
+  color: var(--sage-deep);
+  white-space: nowrap;
 }
 
 /* ---------- Quote ---------- */
