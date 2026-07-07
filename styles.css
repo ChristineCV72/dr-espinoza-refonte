@@ -563,6 +563,18 @@ section.tight {
   margin-bottom: 8px;
 }
 
+.spec-block li a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+
+.spec-block li a:hover {
+  color: var(--sage-deep);
+  text-decoration-color: var(--sage-deep);
+}
+
 /* ---------- Contact ---------- */
 
 .contact-grid {
