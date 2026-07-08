@@ -272,7 +272,7 @@ nav.main-nav > a:hover {
   align-items: flex-start;
   color: var(--ivory);
   background-size: cover;
-  background-position: 75% center;
+  background-position: center center;
 }
 
 .hero::before {
