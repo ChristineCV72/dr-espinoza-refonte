@@ -141,13 +141,14 @@ nav.main-nav > a {
 .dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 20px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: var(--ivory);
   border: 1px solid var(--line);
   box-shadow: 0 20px 44px rgba(28, 30, 29, 0.14);
   padding: 30px;
+  padding-top: 44px;
   gap: 36px;
   z-index: 50;
   min-width: 560px;
