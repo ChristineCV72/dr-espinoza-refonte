@@ -269,7 +269,7 @@ nav.main-nav > a:hover {
   position: relative;
   min-height: 82vh;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   color: var(--ivory);
   background-size: cover;
   background-position: 75% center;
@@ -292,7 +292,7 @@ nav.main-nav > a:hover {
   position: relative;
   width: 100%;
   padding-bottom: 72px;
-  padding-top: 140px;
+  padding-top: 48px;
 }
 
 .hero .eyebrow {
