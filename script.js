@@ -11,3 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".page-hero-video").forEach(function (video) {
+    function reveal() {
+      video.classList.add("is-ready");
+    }
+    if (video.readyState >= 2) {
+      reveal();
+    } else {
+      video.addEventListener("loadeddata", reveal, { once: true });
+    }
+  });
+});
