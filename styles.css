@@ -272,14 +272,16 @@ nav.main-nav > a:hover {
   align-items: flex-end;
   color: var(--ivory);
   background-size: cover;
-  background-position: center;
+  background-position: 75% center;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(28,30,29,0.35) 0%, rgba(28,30,29,0.55) 55%, rgba(28,30,29,0.88) 100%);
+  background:
+    linear-gradient(90deg, rgba(28,30,29,0.82) 0%, rgba(28,30,29,0.5) 42%, rgba(28,30,29,0.08) 68%),
+    linear-gradient(180deg, rgba(28,30,29,0.35) 0%, rgba(28,30,29,0.55) 55%, rgba(28,30,29,0.88) 100%);
 }
 
 .hero .wrap {
