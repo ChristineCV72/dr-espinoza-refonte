@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".page-hero-video").forEach(function (video) {
+  document.querySelectorAll(".page-hero-video, .hero-video").forEach(function (video) {
     function reveal() {
       video.classList.add("is-ready");
     }
@@ -22,6 +22,28 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       video.addEventListener("loadeddata", reveal, { once: true });
     }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var video = document.querySelector(".hero-video");
+  var toggle = document.querySelector(".sound-toggle");
+  if (!video || !toggle) return;
+
+  function setState(muted) {
+    video.muted = muted;
+    toggle.setAttribute("aria-pressed", muted ? "true" : "false");
+    toggle.setAttribute("aria-label", muted ? "Activer le son" : "Couper le son");
+  }
+
+  video.muted = false;
+  video.play().catch(function () {
+    setState(true);
+    video.play().catch(function () {});
+  });
+
+  toggle.addEventListener("click", function () {
+    setState(!video.muted);
   });
 });
 
@@ -65,5 +87,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     setPosition(50);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".compare-carousel").forEach(function (carousel) {
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll(".carousel-slide"));
+    var dots = Array.prototype.slice.call(carousel.querySelectorAll(".carousel-dot"));
+    var prevBtn = carousel.querySelector(".carousel-arrow.prev");
+    var nextBtn = carousel.querySelector(".carousel-arrow.next");
+    var current = 0;
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle("is-active", i === current);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("is-active", i === current);
+      });
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", function () { show(current - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { show(current + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () { show(i); });
+    });
   });
 });
